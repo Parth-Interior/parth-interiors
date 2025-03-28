@@ -1,0 +1,27 @@
+<div class="portfolio-container">
+  <div
+    class="image-tile"
+    *ngFor="let image of images"
+    (click)="openImage(image)"
+  >
+    <img [src]="image" [alt]="image" />
+  </div>
+</div>
+
+<div *ngIf="selectedImage" class="image-viewer">
+  <button class="prev-button" (click)="prevImage($event)">
+    <mat-icon>chevron_left</mat-icon>
+  </button>
+  <img
+    #zoomableImage
+    [src]="selectedImage"
+    [alt]="selectedImage"
+    class="zoomable"
+  />
+  <button class="next-button" (click)="nextImage($event)">
+    <mat-icon>chevron_right</mat-icon>
+  </button>
+  <button class="close-button" (click)="closeImage()">
+    <mat-icon>close</mat-icon>
+  </button>
+</div>

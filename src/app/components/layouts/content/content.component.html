@@ -1,0 +1,71 @@
+<div class="content">
+  <mat-tab-group
+    [selectedIndex]="navigationService.selectedTab.value"
+    (selectedIndexChange)="navigationService.selectedTab.setValue($event)"
+    mat-stretch-tabs="false"
+    mat-align-tabs="end"
+  >
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <ng-container *ngIf="isSmallDevice; else desktopView">
+          <img
+            class="img-logo"
+            (click)="navigateToHome()"
+            src="assets/icons/web-logo.svg"
+            width="40px"
+            alt="Pi Icon"
+          />
+        </ng-container>
+        <ng-template #desktopView>
+          <div class="tab-header">Home</div>
+        </ng-template>
+      </ng-template>
+      <app-home-page></app-home-page>
+    </mat-tab>
+
+    <!-- <mat-tab>
+      <ng-template mat-tab-label>
+        <div class="tab-header">Portfolio</div>
+      </ng-template>
+      <app-portfolio></app-portfolio>
+    </mat-tab> -->
+
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <div class="tab-header">About us</div>
+      </ng-template>
+      <app-about-us></app-about-us>
+    </mat-tab>
+  </mat-tab-group>
+</div>
+
+<ng-container *ngIf="isSmallDevice">
+  <div class="header-ribbon">
+    <!-- <div class="img-logo"> -->
+      <img class="img-logo"
+        (click)="navigateToHome()"
+        src="assets/icons/web-logo.svg"
+        alt="Pi Icon"
+      />
+    <!-- </div> -->
+  </div>
+  <button
+    class="menu-button"
+    mat-icon-button
+    [matMenuTriggerFor]="menu"
+    aria-label="Menu"
+  >
+    <mat-icon>menu</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button (click)="navigateToHome()" mat-menu-item>
+      <span>Home</span>
+    </button>
+    <!-- <button (click)="navigateToPortfolio()" mat-menu-item>
+      <span>Portfolio</span>
+    </button> -->
+    <button (click)="navigateToAboutUs()" mat-menu-item>
+      <span>About us</span>
+    </button>
+  </mat-menu>
+</ng-container>

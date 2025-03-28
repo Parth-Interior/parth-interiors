@@ -1,0 +1,53 @@
+<div class="carousel">
+    <!-- List of Slides -->
+    <div class="list">
+      <div
+        class="item"
+        *ngFor="let slide of slides"
+       
+      >
+        <img [src]="slide.img" />
+        <div class="content">
+          <!-- <div class="author">{{ slide.author }}</div> -->
+           <div class="glass-effect">
+            <div class="title"><div>{{ slide.title }}</div></div>
+            <div class="topic"><div>{{ slide.topic }}</div></div>
+            <div class="des"><div>{{ slide.description }}</div></div>
+           </div>
+         
+          <!-- <div class="buttons">
+            <button>SEE MORE</button>
+            <button>SUBSCRIBE</button>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  
+    <!-- Thumbnail Navigation -->
+    <div class="thumbnail">
+      <div
+        *ngFor="let slide of slides; let i=index"
+        class="item"
+        
+      >
+      <img class="thumbnail-img" [src]="slides[(i+1)%slides.length].img" />
+        <!-- <div class="content">
+          <div class="title">{{ slide.title }}</div>
+          <div class="description">{{ slide.topic }}</div>
+        </div> -->
+      </div>
+    </div>
+  
+    <!-- Navigation Arrows -->
+    <div class="arrows">
+      <button (click)="showSlider('prev')"><</button>
+      <button (click)="showSlider('next')">></button>
+    </div>
+  
+    <!-- Time Running Indicator -->
+    <div
+      class="time"
+      [style.width]="100 - (timeRunning / timeAutoNext) * 100 + '%'"
+    ></div>
+  </div>
+  

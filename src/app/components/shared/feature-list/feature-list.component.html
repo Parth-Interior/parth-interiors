@@ -1,0 +1,63 @@
+<div class="feature-list">
+  <p class="header-text">How We Standout</p>
+  <div class="feature-deck">
+    <div class="grid-container glass-effect">
+      <div *ngFor="let item of sailentFeatureList" class="grid-item">
+        <div><img [src]="item.images" [alt]="item.title" /></div>
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.description }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="project-type">
+    <p class="header-text">Range of Projects</p>
+    <div class="project-type-container">
+      @for (item of projectTypeList; track $index) {
+      <div class="project-type-item">
+        <img [src]="item.images" [alt]="item.title" />
+        <p>{{item.title}}</p>
+      </div>
+      }
+    </div>
+  </div>
+  <div class="divider">
+    <mat-divider ></mat-divider>
+  </div>
+  
+  <p class="header-text">What We Offer</p>
+  <div
+    *ngFor="let spec of specsData; let i = index"
+    class="specs"
+    [class.even]="i % 2 === 0"
+    [class.odd]="i % 2 !== 0"
+  >
+    @if (isSmallDevice) {
+    <div class="left">
+      <div>
+        <div class="title">{{ spec.title }}</div>
+        <div class="des">{{ spec.description }}</div>
+      </div>
+      <img [src]="spec.image" alt="{{ spec.title }}" />
+    </div>
+    } @else {
+    <div class="backgroud-tiles">
+      <div class="left" [ngClass]="{ 'image-first': i % 2 !== 0 }">
+        <div *ngIf="i % 2 === 0">
+          <div class="title">{{ spec.title }}</div>
+          <div class="des">{{ spec.description }}</div>
+        </div>
+        <img *ngIf="i % 2 !== 0" [src]="spec.image" alt="{{ spec.title }}" />
+      </div>
+
+      <div class="right" [ngClass]="{ 'image-first': i % 2 === 0 }">
+        <img *ngIf="i % 2 === 0" [src]="spec.image" alt="{{ spec.title }}" />
+        <div *ngIf="i % 2 !== 0">
+          <div class="title">{{ spec.title }}</div>
+          <div class="des">{{ spec.description }}</div>
+        </div>
+      </div>
+    </div>
+
+    }
+  </div>
+</div>

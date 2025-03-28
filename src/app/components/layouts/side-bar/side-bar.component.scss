@@ -1,0 +1,60 @@
+.side-bar {
+  width: 4.375rem; // 70px -> 4.375rem
+}
+
+.icon-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-content: center;
+  height: 100vh;
+  background: linear-gradient(
+    180deg,
+    rgb(255, 255, 255) 0%,
+    rgba(55, 51, 51, 0.7) 100%
+  );
+}
+
+.top-icon {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.625rem; // 10px -> 0.625rem
+}
+
+.bottom-icon {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.25rem; // 20px -> 1.25rem
+  align-items: center;
+}
+
+.bottom-icon img {
+  margin-bottom: 0.625rem; // 10px -> 0.625rem
+}
+
+.spacer {
+  flex-grow: 1;
+}
+
+img {
+  cursor: pointer;
+}
+
+.glass-effect {
+  position: relative;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1); /* Black background with transparency */
+  // border-radius: 0.9375rem; /* 15px -> 0.9375rem */
+  backdrop-filter: blur(0.3125rem); /* 5px -> 0.3125rem */
+  -webkit-backdrop-filter: blur(0.625rem); /* 10px -> 0.625rem */
+  box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.1); /* 4px, 6px -> 0.25rem, 0.375rem */
+  color: white; /* Text color */
+}
+
+@media screen and (max-width: 42.375rem) {
+  // 678px -> 42.375rem
+  .side-bar {
+    display: none;
+  }
+}

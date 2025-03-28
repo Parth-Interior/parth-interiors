@@ -1,0 +1,61 @@
+<div class="container">
+  <div class="des-container">
+    <div class="right">
+      <img class="about-img" src="/assets/furniture/129.jpg" alt="about-us" />
+    </div>
+
+    <p class="company-header">Our Core Values</p>
+    <div class="company-val">
+      <div class="grid-container glass-effect">
+        <div *ngFor="let item of sailentFeatureList" class="grid-item">
+          <div><img [src]="item.images" [alt]="item.title" /></div>
+          <p class="item-title">{{ item.title }}</p>
+        </div>
+      </div>
+    </div>
+    <p class="company-header">Our Growth Story</p>
+    <div class="des">
+      Welcome to Parth Interior, where experience, dedication, and quality
+      craftsmanship come together to deliver exceptional results in every
+      project we undertake.
+      <br /><br />
+      Founded by Kirit Mistry, our company has been delivering excellence
+      since 2000, built on decades of expertise in the construction and
+      service industry. With a strong foundation of hands-on experience,
+      Kirit Mistry started from humble beginnings and gradually expanded
+      Parth Interior into a full-service turnkey business. Today, we
+      continue to provide innovative solutions and exceptional
+      craftsmanship, making us a trusted name in the industry.
+      <br /><br />
+      Throughout the years, Kirit Mistry has played a pivotal role in every
+      detail of the business—from managing initial site preparations to
+      overseeing complex projects and providing creative solutions for our
+      clients. With an unwavering commitment to quality and a deep understanding
+      of the entire process, Kirit Mistry has guided the company through
+      numerous successful ventures, building lasting relationships along the
+      way.
+      <br /><br />
+      At Parth Interior, we are passionate about turning visions into reality.
+      Whether it's a residential project, commercial development, or specialized
+      service, our team brings unmatched expertise, precision, and attention to
+      detail. Our journey from "nothing" to a trusted turnkey provider reflects
+      our dedication to excellence, and we are proud to continue delivering
+      results that exceed expectations.
+      <br /><br />
+      Thank you for visiting Parth Interior. Let us be a part of your next
+      project, and experience the difference that two decades of experience can
+      make.
+    </div>
+    <div>
+      <p class="company-header">Our Success Story</p>
+      <div class="company-val">
+        <div class="success-container glass-effect">
+          <ul *ngFor="let item of successStoryList" class="success-item">
+            <li class="item-title">{{ item.title }}</li>
+          </ul>
+        </div>
+      </div>
+      <app-footer />
+    </div>
+  </div>
+</div>

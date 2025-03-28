@@ -1,0 +1,107 @@
+.portfolio-container {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(250px, 1fr)
+  ); // Adjust size for square tiles
+  gap: 16px; // Smaller gap for a tighter layout
+  padding: 16px;
+  justify-content: center; // Center the grid
+}
+
+.image-tile {
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px; // Slightly rounded corners
+  cursor: pointer;
+  transition: transform 0.3s;
+  aspect-ratio: 1 / 1; // Ensures square tiles
+}
+
+.image-tile:hover {
+  transform: scale(1.05);
+}
+
+.image-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; // Ensures the image fills the tile without distortion
+  border-radius: 4px;
+}
+
+.image-viewer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.image-viewer img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 8px;
+}
+
+.close-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #88868687; /* Black background with transparency */
+  backdrop-filter: blur(5px); /* Apply blur to the background */
+  -webkit-backdrop-filter: blur(10px); /* For Safari */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for effect */
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-size: 24px;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.prev-button,
+.next-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #88868687; /* Black background with transparency */
+  backdrop-filter: blur(5px); /* Apply blur to the background */
+  -webkit-backdrop-filter: blur(10px); /* For Safari */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for effect */
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-size: 24px;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.close-button:hover,
+.prev-button:hover,
+.next-button:hover {
+  background: rgba(0, 0, 0, 0.3); /* Darker background on hover */
+}
+
+.prev-button {
+  left: 20px;
+}
+
+.next-button {
+  right: 20px;
+}

@@ -1,0 +1,16 @@
+.layout {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    
+}
+
+.content-layout {
+    overflow-y: auto;
+}
+
+@media screen and (max-width: 678px) {
+    .content-layout {
+        overflow-y: unset;
+    }
+  }
